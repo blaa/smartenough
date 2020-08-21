@@ -1,0 +1,31 @@
+* Pinout configuration:
+|-----+--------+---------+-------------------+-----------------------+-----------+----|
+|     |        | @ Boot? | Will boot?        |                       |           |    |
+|-----+--------+---------+-------------------+-----------------------+-----------+----|
+| A0  |        |         |                   | Humid. sensor output  | PULL DOWN |    |
+|-----+--------+---------+-------------------+-----------------------+-----------+----|
+| D0  | GPIO16 | HIGH    |                   | Humid. Sensor POWER 1 | FLOATS    | OK |
+| D1  | GPIO5  |         |                   | Humid. Sensor POWER 2 | FLOATS    | OK |
+| D2  | GPIO4  |         |                   | SDA                   |           | OK |
+| D3  | GPIO0  |         | BOOT FAIL IF LOW  | Humid 3?              |           |    |
+| D4  | GPIO2  | HIGH    | BOOT FAIL IF LOW  | DHT11                 | PULL UP   | OK |
+| 3V  |        |         |                   | X                     |           |    |
+| GND |        |         |                   | X                     |           |    |
+| D5  | GPIO14 |         |                   | PUMP 1                | PULL DOWN | OK |
+| D6  | GPIO12 |         |                   | PUMP 2                | PULL DOWN | OK |
+| D7  | GPIO13 |         |                   | SCL                   |           | OK |
+| D8  | GPIO15 |         | BOOT FAIL IF HIGH | PUMP 3?               |           |    |
+|-----+--------+---------+-------------------+-----------------------+-----------+----|
+| RX  | GPIO3  | HIGH    |                   | SERIAL                |           |    |
+| TX  | GPIO1  | HIGH    | BOOT FAIL IF LOW  | SERIAL                |           |    |
+| GND |        |         |                   | X                     |           |    |
+| 3V  |        |         |                   | X                     |           |    |
+
+* Part list:
+- Ground humidity "sensor": https://allegro.pl/oferta/modul-z-czujnikiem-wilgotnosci-gleby-ziemi-8462917747
+- DHT11
+- SSD1306 128x64 OLED display
+- NodeMCU v3 / ESP8266
+- Two water pumps.
+- Two IRLZ44n mosfets to control the pumps.
+- Some resistors, one capacitor.
