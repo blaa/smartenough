@@ -24,12 +24,14 @@ print("RAM 0:", gc.mem_free())
 # import micropython
 # micropython.alloc_emergency_exception_buf(100)
 
+
 def connect():
     cli = network.WLAN(network.STA_IF)
     cli.active(True)
     cli.connect(cfg.WIFI_NAME, cfg.WIFI_PASS)
     sta = network.WLAN(network.AP_IF)
     sta.active(False)
+
 
 class Display:
     def __init__(self, scl=13, sda=4):
